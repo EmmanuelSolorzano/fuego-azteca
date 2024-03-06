@@ -1,0 +1,28 @@
+<!-- my_module/views/my_module_views.xml -->
+<odoo>
+    <data>
+        <record id="view_my_module_kanban" model="ir.ui.view">
+            <field name="name">fazteca.drag_and_drop</field>
+            <field name="model">fazteca.drag_and_drop</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="o_kanban_record">
+                                <div class="o_kanban_quick_create">
+                                    <!-- Add your drag and drop area here -->
+                                </div>
+                                <div class="o_kanban_content">
+                                    <!-- Content of your Kanban card -->
+                                    <div>
+                                        <field name="column_1"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    </data>
+</odoo>
