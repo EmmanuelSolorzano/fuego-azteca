@@ -5,10 +5,10 @@
             <div class="row h-100 align-items-center">
                 <div class="col">
                     <h2>Archivo de Amazon</h2>
-                    <div class="drop-area" t-ref="amazon">
-                        <input type="file" id="amazon-file" accept=".csv" style="display: none;" t-on-change="handleAmazonFile"/>
-                        <label for="amazon-file" class="text-center">Arrasta aquí tu archivo .csv</label>
-                    </div>
+                    <label for="amazon-file" class="drop-area" t-ref="amazon">
+                        <input class="uploadBox" type="file" id="amazon-file" accept=".csv" style="display: none;" t-on-change="handleAmazonFile"/>
+                        <label class="text-center">Haz click aquí para cargar tu archivo .csv</label>
+                    </label>
                 </div>
                 <div class="col">
                     <h2>Clientes</h2>

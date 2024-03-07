@@ -11,3 +11,8 @@
 .drop-area:hover {
     background-color: #D9EEFF;
 }
+
+.uploadBox {
+    height: 100%;
+    width: 100%;
+}
