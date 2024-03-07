@@ -14,15 +14,15 @@
                     <h2>Clientes</h2>
                     <label for="clientes-file" class="drop-area" t-ref="clientes">
                         <input type="file" id="clientes-file" accept=".csv" style="display: none;" t-on-change="handleClientesFile"/>
-                        <label for="clientes-file" class="text-center">Arrasta aquí tu archivo .csv</label>
-                    </div>
+                        <label class="text-center">Haz click aquí para cargar tu archivo .csv</label>
+                    </label>
                 </div>
                 <div class="col">
                     <h2>Inventario</h2>
                     <label for="inventario-file" class="drop-area" t-ref="inventario">
                         <input type="file" id="inventario-file" accept=".csv" style="display: none;" t-on-change="handleInventarioFile"/>
-                        <label for="inventario-file" class="text-center">Arrasta aquí tu archivo .csv</label>
-                    </div>
+                        <label class="text-center">Haz click aquí para cargar tu archivo .csv</label>
+                    </label>
                 </div>
             </div>
         </div>
