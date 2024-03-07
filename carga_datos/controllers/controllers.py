@@ -70,16 +70,16 @@ def processTransactions(file):
     filesInDir = listdir(path)
     for key, value in checks.items():
         if f"{key}.csv" in filesInDir:
-            print("Appending")
-            print("Len Before", checks[key].shape)
+            #print("Appending")
+            #print("Len Before", checks[key].shape)
             checks[key] = pd.concat([pd.read_csv(path+f"{key}.csv"), value])
             checks[key].to_csv(path+f"{key}.csv", index=False)
-            print("Len Now", checks[key].shape)
+            #print("Len Now", checks[key].shape)
             pd.read_csv(path+f"{key}.csv").drop_duplicates().to_csv(path+f"{key}.csv", index=False)
-            print("Len After", pd.read_csv(path+f"{key}.csv").shape)
+            #print("Len After", pd.read_csv(path+f"{key}.csv").shape)
         
         else:
-            print("Creating")
+            #print("Creating")
             checks[key].to_csv(path+f"{key}.csv", index=False)
     
 
@@ -89,15 +89,15 @@ def processClientesInventario(file, type):
     file = pd.read_csv("working.csv")
     
     if f"{type[2:]}.csv" in listdir(path):
-        print("Appending")
-        print("Len Before", pd.read_csv(path+f"{type[2:]}.csv").shape)
+        #print("Appending")
+        #print("Len Before", pd.read_csv(path+f"{type[2:]}.csv").shape)
         file = pd.concat([pd.read_csv(path+f"{type[2:]}.csv"), file])
         file.to_csv(path+f"{type[2:]}.csv", index=False)
-        print("Len Now", file.shape)
+        #print("Len Now", file.shape)
         pd.read_csv(path+f"{type[2:]}.csv").drop_duplicates().to_csv(path+f"{type[2:]}.csv", index=False)
-        print("Len After", pd.read_csv(path+f"{type[2:]}.csv").shape)
+        #print("Len After", pd.read_csv(path+f"{type[2:]}.csv").shape)
     else:
-        print("Creating")
+        #print("Creating")
         file.to_csv(path+f"{type[2:]}.csv", index=False)
         
 

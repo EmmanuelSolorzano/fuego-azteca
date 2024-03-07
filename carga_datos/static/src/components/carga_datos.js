@@ -3,7 +3,7 @@
 import { registry } from "@web/core/registry";
 const { Component, useRef } = owl;
 
-export class OwlSalesDashboard extends Component {
+export class OwlCargaDatos extends Component {
 
     setup(){
         this.dropArea = useRef('Drag1');
@@ -54,5 +54,5 @@ export class OwlSalesDashboard extends Component {
     }
 }
 
-OwlSalesDashboard.template = "owl.OwlSalesDashboard";
-registry.category("actions").add("owl.sales_dashboard", OwlSalesDashboard);
+OwlCargaDatos.template = "owl.OwlCargaDatos";
+registry.category("actions").add("owl.carga_datos", OwlCargaDatos);
