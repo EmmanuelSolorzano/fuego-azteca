@@ -9,50 +9,36 @@ export class OwlSalesDashboard extends Component {
         this.dropArea = useRef('Drag1');
     }
 
-    fn1
+    handleAmazonFile(ev) {
+        this.handleFileUpload(ev.target.files[0], 'c_amazon');
+    }
 
-    async baseCall(calledBy){
-        const file = "Prueba de archivo";
+    handleClientesFile(ev) {
+        this.handleFileUpload(ev.target.files[0], 'c_clientes');
+    }
 
+    handleInventarioFile(ev) {
+        this.handleFileUpload(ev.target.files[0], 'c_inventario');
+    }
+
+    async handleFileUpload(file, calledBy) {
+        console.log('File:', file);
         try {
             const response = await fetch('/fn1', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ file, calledBy }),
+                body: JSON.stringify({file, calledBy}),
             });
-
-            if (!response.ok) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-
-            const resultado = await response.json();
-            console.log('Respuesta del servidor:', resultado);
-
-
-        } catch (error) {
-            console.error('Error en la solicitud AJAX:', error);
+            // Handle the response here
+            const data = await response.json();
+            console.log(data);
         }
-    }
-
-    async c_amazon(){
-        console.log("Amazon clickeado");
-        const calledBy = 'c_amazon';
-        this.baseCall(calledBy);
-    }
-    
-    async c_clientes(){
-        console.log("Clientes clickeado");
-        const calledBy = 'c_clientes';
-        this.baseCall(calledBy);
-
-    }
-
-    async c_inventario(){
-        console.log("Inventario clickeado");
-        const calledBy = 'c_inventario';
-        this.baseCall(calledBy);
+        catch (error) {
+            console.error('Error:', error);
+            // Handle errors here
+        }
     }
 }
 

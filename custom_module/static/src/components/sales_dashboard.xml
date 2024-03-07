@@ -5,26 +5,23 @@
             <div class="row h-100 align-items-center">
                 <div class="col">
                     <h2>Archivo de Amazon</h2>
-                    <div 
-                        class="drop-area" 
-                        t-ref="amazon" 
-                        t-on-click="c_amazon"
-                        
-                    >
-
-                        <p class="text-center">Arrasta aquí tu archivo .csv</p>
+                    <div class="drop-area" t-ref="amazon">
+                        <input type="file" id="amazon-file" accept=".csv" style="display: none;" t-on-change="handleAmazonFile"/>
+                        <label for="amazon-file" class="text-center">Arrasta aquí tu archivo .csv</label>
                     </div>
                 </div>
                 <div class="col">
                     <h2>Clientes</h2>
-                    <div class="drop-area" t-ref="clientes" t-on-click="c_clientes">
-                        <p class="text-center">Arrasta aquí tu archivo .csv</p>
+                    <div class="drop-area" t-ref="clientes">
+                        <input type="file" id="clientes-file" accept=".csv" style="display: none;" t-on-change="handleClientesFile"/>
+                        <label for="clientes-file" class="text-center">Arrasta aquí tu archivo .csv</label>
                     </div>
                 </div>
                 <div class="col">
                     <h2>Inventario</h2>
-                    <div class="drop-area" t-ref="inventario" t-on-click="c_inventario">
-                        <p class="text-center">Arrasta aquí tu archivo .csv</p>
+                    <div class="drop-area" t-ref="inventario">
+                        <input type="file" id="inventario-file" accept=".csv" style="display: none;" t-on-change="handleInventarioFile"/>
+                        <label for="inventario-file" class="text-center">Arrasta aquí tu archivo .csv</label>
                     </div>
                 </div>
             </div>
