@@ -18,7 +18,7 @@ Carga de archivos para procesar en Odoo
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'web'],
     
     'application': True,
 
@@ -26,6 +26,17 @@ Carga de archivos para procesar en Odoo
     'data': [
         'security/ir.model.access.csv',
         'views/drag_and_drop_view.xml',
+        'views/views.xml',
     ],
+    'assets': {
+        'drag_and_drop.assets_standalone_app': [
+            ('include', 'web._assets_helpers'),
+            'web/static/src/scss/pre_variables.scss',
+            'web/static/lib/bootstrap/scss/_variables.scss',
+            ('include', 'web._assets_bootstrap'),
+            ('include', 'web._assets_core'),
+            'your_module/static/src/standalone_app/**/*',
+        ],
+    }
 }
 
