@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="action_owl_carga_datos" model="ir.actions.client">
+            <field name="name">CargaDatos</field>
+            <field name="tag">owl.carga_datos</field>
+        </record>
+        <menuitem name="Carga de Datos FA" id="menu_owl_tutorial" sequence="10">
+            <menuitem name="Carga de Datos" id="menu_owl_carga_datos" sequence="10" action="action_owl_carga_datos"/>
+        </menuitem>
+    </data>
+</odoo>
