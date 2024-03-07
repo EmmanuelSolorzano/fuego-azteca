@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_drag_and__drop_drag_and__drop,drag_and__drop.drag_and__drop,model_drag_and__drop_drag_and__drop,base.group_user,1,1,1,1
+access_fazteca_drag,fazteca.drag,model_fazteca_drag,base.group_user,1,1,1,1

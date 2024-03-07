@@ -2,9 +2,9 @@
 
 from odoo import models, fields #, api
 
-class drag_and_drop(models.Model):
-    _name = 'fazteca.drag_and_drop'
-    _description = 'Módulo para cargar archivos a ser procesados'
+class DragNDrop(models.Model):
+    _name = 'fazteca.drag'
+    _description = 'Módulo para cargar archivos a ser procesado.'
 
     column_1 = fields.Char(string='Column 1')
     # value = fields.Integer()

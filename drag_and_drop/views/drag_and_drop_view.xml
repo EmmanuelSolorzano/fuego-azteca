@@ -1,9 +1,9 @@
 <!-- my_module/views/my_module_views.xml -->
 <odoo>
     <data>
-        <record id="view_my_module_kanban" model="ir.ui.view">
-            <field name="name">fazteca.drag_and_drop</field>
-            <field name="model">fazteca.drag_and_drop</field>
+        <record id="drag_view" model="ir.ui.view">
+            <field name="name">drag.view</field>
+            <field name="model">fazteca.drag</field>
             <field name="arch" type="xml">
                 <kanban>
                     <templates>
@@ -11,6 +11,7 @@
                             <div class="o_kanban_record">
                                 <div class="o_kanban_quick_create">
                                     <!-- Add your drag and drop area here -->
+                                    
                                 </div>
                                 <div class="o_kanban_content">
                                     <!-- Content of your Kanban card -->
@@ -24,5 +25,23 @@
                 </kanban>
             </field>
         </record>
+    
+    <!-- Top menu item -->
+    <record id="drag_action" model="ir.actions.act_window">
+        <field name="name">Drag N' Drop</field>
+        <field name="res_model">fazteca.drag</field>
+        <field name="view_mode">kanban</field>
+    </record>
+
+    <menuitem id="drag_menu_root" 
+              name="Drag N' Drop"
+    />
+
+    <menuitem id="drag_menu" 
+              name="Drag N' Drop"
+              parent="drag_menu_root"
+              action="drag_action"
+    />
+
     </data>
 </odoo>
