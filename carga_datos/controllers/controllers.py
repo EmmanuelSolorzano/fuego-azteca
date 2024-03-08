@@ -85,6 +85,9 @@ def processTransactions(file):
 
 def processClientesInventario(file, type):
     with open("working.csv", "w") as temp:
+        if type == "c_clientes":
+            # jump to the second line to avoid the header
+            file = file[file.find("\n")+1:]
         temp.write(file)
     file = pd.read_csv("working.csv")
     
