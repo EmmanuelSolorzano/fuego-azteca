@@ -15,7 +15,7 @@ export class ChartRenderer extends Component {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ "dataset" : "sells.csv", "keys": "Total,Número de pedido"}),
+                body: JSON.stringify({ "data" : "kpi"}),
             });
             // Handle the response here
             const data = await response.json();
