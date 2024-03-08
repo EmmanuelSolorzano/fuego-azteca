@@ -4,7 +4,6 @@ from os import listdir
 import pandas as pd
 import numpy as np
 import matplotlib.colors as mcolors
-from math import ceil
 
 path = "/Users/emmanuelsolorzano/Documents/Github/odoo/addons/carga_datos/"
 
@@ -52,8 +51,8 @@ def float_to_color(value):
     # Get the RGB color from the colormap
     rgb_color = cmap(normalized_value)
     # Convert the RGB color to a hex color
-    rgb_color = "({0}, {1}, {2})".format(ceil(rgb_color[0]*255), ceil(rgb_color[1]*255), ceil(rgb_color[2]*255))
-    return rgb_color
+    hex_color = mcolors.rgb2hex(rgb_color)
+    return hex_color
 
 def getDataMarital():
     # Function made by Omar Alejandro Rodríguez

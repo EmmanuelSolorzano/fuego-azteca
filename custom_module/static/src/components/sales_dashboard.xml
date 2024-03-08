@@ -14,10 +14,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <KpiCard name="'Ganancias totales'" spa="'KPI Ganancias'" param="'Ganancias totales'"/>
-                        <KpiCard name="'Ganancias brutas'" spa="'KPI Ganancias'" param="'Ganancias brutas'"/>
-                        <KpiCard name="'Ganancia promedio'" spa="'KPI Ganancias'" param="'Ganancia promedio'"/>
-                        <KpiCard name="'Gastos de ventas'" spa="'KPI Gastos FA'" param="'Gastos Venta'"/>
+                        <KpiCard name="'Ganancias totales'" spa="'EUR'" param="'Ganancias totales'"/>
+                        <KpiCard name="'Ganancias brutas'" spa="'EUR'" param="'Ganancias brutas'"/>
+                        <KpiCard name="'Ganancia promedio'" spa="'EUR'" param="'Ganancia promedio'"/>
+                        <KpiCard name="'Gastos de ventas'" spa="'EUR'" param="'Gastos Venta'"/>
                     </div>
                     <div class="row">
                         <div class="col-lg-6 m-0 p-0">
