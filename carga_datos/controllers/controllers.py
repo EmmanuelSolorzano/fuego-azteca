@@ -7,7 +7,7 @@ import re
 
 path = "/home/erick/odoo-custom-addons/"
 
-def processTransactions(file):
+def processTransactions(file, replace = False):
     counter = 0
     lines = file.split("\n")
     with open("working.csv", "w") as file:
@@ -69,7 +69,7 @@ def processTransactions(file):
     checks = {"expenses": expenses, "vine": vine, "sells": sells}
     filesInDir = listdir(path)
     for key, value in checks.items():
-        if f"{key}.csv" in filesInDir:
+        if (f"{key}.csv" in filesInDir) and (not replace):
             #print("Appending")
             #print("Len Before", checks[key].shape)
             checks[key] = pd.concat([pd.read_csv(path+f"{key}.csv"), value])
@@ -83,7 +83,7 @@ def processTransactions(file):
             checks[key].to_csv(path+f"{key}.csv", index=False)
     
 
-def processClientesInventario(file, type):
+def processClientesInventario(file, type, replace = False):
     with open("working.csv", "w") as temp:
         if type == "c_clientes":
             # jump to the second line to avoid the header
@@ -91,7 +91,7 @@ def processClientesInventario(file, type):
         temp.write(file)
     file = pd.read_csv("working.csv")
     
-    if f"{type[2:]}.csv" in listdir(path):
+    if (f"{type[2:]}.csv" in listdir(path)) and (not replace):
         #print("Appending")
         #print("Len Before", pd.read_csv(path+f"{type[2:]}.csv").shape)
         file = pd.concat([pd.read_csv(path+f"{type[2:]}.csv"), file])
