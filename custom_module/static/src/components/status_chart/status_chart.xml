@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="owl.StatusChart" owl="1">
+        <canvas t-ref="status_chart"/>
+    </t>
+</templates>

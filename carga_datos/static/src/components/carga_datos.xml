@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="owl.OwlCargaDatos" owl="1">
+        <div class="container" style="width: 75%; margin-top: 20px; padding: 20px;">
+            <div class="row h-100 align-items-center">
+                <div class="col">
+                    <h2>Archivo de Amazon</h2>
+                    <label for="amazon-file" class="drop-area" t-ref="amazon">
+                        <input class="uploadBox" type="file" id="amazon-file" accept=".csv" style="display: none;" t-on-change="handleAmazonFile"/>
+                        <label class="text-center" >Haz click aquí para cargar tu archivo .csv</label>
+                    </label>
+                </div>
+                <div class="col">
+                    <h2>Clientes</h2>
+                    <label for="clientes-file" class="drop-area" t-ref="clientes">
+                        <input type="file" id="clientes-file" accept=".csv" style="display: none;" t-on-change="handleClientesFile"/>
+                        <label class="text-center">Haz click aquí para cargar tu archivo .csv</label>
+                    </label>
+                </div>
+                <div class="col">
+                    <h2>Inventario</h2>
+                    <label for="inventario-file" class="drop-area" t-ref="inventario">
+                        <input type="file" id="inventario-file" accept=".csv" style="display: none;" t-on-change="handleInventarioFile"/>
+                        <label class="text-center">Haz click aquí para cargar tu archivo .csv</label>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

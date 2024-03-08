@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="owl.OwlSalesDashboard" owl="1">
+        <div class="vh-100 overflow-auto bg-muted">
+            <div class="row m-3">
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col m-0 p-0">
+                            <div class="shadow-sm border m-2 p-4 bg-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h1 class="text-primary fw-bold">Fuego Azteca Dashboard</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <KpiCard name="'Ganancias totales'" spa="'EUR'" param="'Ganancias totales'"/>
+                        <KpiCard name="'Ganancias brutas'" spa="'EUR'" param="'Ganancias brutas'"/>
+                        <KpiCard name="'Ganancia promedio'" spa="'EUR'" param="'Ganancia promedio'"/>
+                        <KpiCard name="'Gastos de ventas'" spa="'EUR'" param="'Gastos Venta'"/>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 m-0 p-0">
+                            <div class="shadow-sm border m-2 p-4 bg-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h3 class="text-primary fw-bold">Sectores por estado civil</h3>
+                                </div>
+                                <StatusChart type="'doughnut'" title="'Reporte de sectores por estado civil'"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 m-0 p-0">
+                            <div class="shadow-sm border m-2 p-4 bg-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h3 class="text-primary fw-bold">Sectores por edad</h3>
+                                </div>
+                                <AgeChart type="'pie'" title="'Reporte de sectores por edad'"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="row">
+                        <div class="col m-0 p-0">
+                            <div class="shadow-sm border m-2 p-4 bg-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h3 class="text-primary fw-bold">Ventas por estado</h3>
+                                </div>
+                                <StateSalesChart type="'bar'" title="'Reporte de ventas por estado'"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col m-0 p-0">
+                            <div class="shadow-sm border m-2 p-4 bg-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h3 class="text-primary fw-bold">Ganancias por producto</h3>
+                                </div>
+                                <SKUSalesChart type="'bar'" title="'Reporte de ganancias por producto'"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
