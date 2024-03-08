@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.colors as mcolors
 
-path = "/home/erick/odoo-custom-addons/"
+path = "/Users/emmanuelsolorzano/Documents/Github/odoo/addons/carga_datos/"
 
 def getAttrs(dataset, keys):
     return {key: list(dataset[key].values) for key in keys}
