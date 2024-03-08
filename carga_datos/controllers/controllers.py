@@ -108,22 +108,27 @@ class MiControlador(http.Controller):
     @http.route('/fn1', type='json', auth='public', website=True)
     def fileProcessing(self, **kw):
         request_body = http.request.httprequest.data
-        json_data = json.loads(request_body.decode('utf-8'))        
-        if json_data['calledBy'] == "c_amazon":
-            processTransactions(json_data['file'])
-            return "Archivo procesado exitosamente!"
-        
-        elif json_data['calledBy'] == "c_clientes":
-            processClientesInventario(json_data['file'], json_data['calledBy'])
-            return "Archivo procesado exitosamente!"
-        
-        
-        elif json_data['calledBy'] == "c_inventario":
-            processClientesInventario(json_data['file'], json_data['calledBy'])
-            return "Archivo procesado exitosamente!"
-        
+        try:
+            json_data = json.loads(request_body.decode('utf-8'))        
+            if json_data['calledBy'] == "c_amazon":
+                processTransactions(json_data['file'])
+                return "Archivo procesado exitosamente!"
             
-        return f"Ocurrio un error.\n {json_data['calledBy']} no es un valor valido."
+            elif json_data['calledBy'] == "c_clientes":
+                processClientesInventario(json_data['file'], json_data['calledBy'])
+                return "Archivo procesado exitosamente!"
+            
+            
+            elif json_data['calledBy'] == "c_inventario":
+                processClientesInventario(json_data['file'], json_data['calledBy'])
+                return "Archivo procesado exitosamente!"
+            
+            return "Error"
+        
+        except Exception as e:
+            return "Error"
+            
+        
     
 
         
