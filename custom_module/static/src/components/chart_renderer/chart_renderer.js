@@ -2,6 +2,7 @@
 
 import { registry } from "@web/core/registry"
 import { loadJS } from "@web/core/assets"
+//import getDataset from "../getDataset"
 const { Component, onWillStart, useRef, onMounted } = owl
 
 export class ChartRenderer extends Component {
@@ -9,6 +10,19 @@ export class ChartRenderer extends Component {
         this.chartRef = useRef("chart")
         onWillStart(async ()=>{
             await loadJS("https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js")
+            const response = await fetch('/fn2', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ "dataset" : "sells.csv", "keys": "Total,Número de pedido"}),
+            });
+            // Handle the response here
+            const data = await response.json();
+            console.log("aaaaaaaaaa");
+            console.log(data.result);
+            console.log("bbbbbbbbbb")
+            return data;
         })
 
         onMounted(()=>this.renderChart())
